@@ -1,0 +1,23 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "simple calcutator client server",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Hadriel Benjo",
+  "license": "ISC",
+  "devDependencies": {
+    "auth0": "^2.9.1",
+    "auth0-js": "^9.6.1",
+    "chai": "^4.1.2",
+    "electron": "2.0.2",
+    "jest": "^23.1.0"
+  },
+  "dependencies": {
+    "auth0": "^2.9.1",
+    "cmake-js": "^3.7.3",
+    "request": "^2.87.0"
+  }
+}

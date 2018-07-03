@@ -1,0 +1,161 @@
+<div ng-controller="homeCtrl">
+        
+        <div class="box" ng-class="{'theme0_box': theme == 0, 'theme1_box': theme == 1, 'expend_box': expend}">
+
+        <div class="display" ng-mousedown="handleClickBox($event)" ng-class="{'theme0_display': theme == 0, 'theme1_display': theme == 1}">
+                <input type="text" 
+                       readonly 
+                       size="40"
+                       ng-value="display" 
+                       id="d">
+        </div>
+
+        <div ng-class="keys">
+                <div class="row_calc"> 
+                        <input type="button" 
+                                value="Exit" 
+                                class="button gray"
+                                ng-class="{'theme0_gray': theme == 0, 'theme1_gray': theme == 1, 'wide': !expend}"
+                                ng-click="close()"> 
+                        <input type="button" 
+                                class="button gray" 
+                                ng-if="expend"
+                                ng-class="{'theme0_gray': theme == 0, 'theme1_gray': theme == 1}"
+                                value="BS" 
+                                ng-click="pressKey('BS')">
+                        <input type="button" 
+                                class="button gray"
+                                ng-class="{'theme0_gray': theme == 0, 'theme1_gray': theme == 1}"
+                                value="Clear" 
+                                ng-click="c('')">  
+                        <input type="button" 
+                                id = "loginKey"
+                                class="button gray"
+                                ng-class="{'theme0_gray': theme == 0, 'theme1_gray': theme == 1}"
+                                ng-value="authFlag ? 'Logout': 'Login' " 
+                                ng-mousedown="handleClickLogin($event)">     
+                </div>
+
+                <div class="row_calc" ng-if="expend"> 
+                        <input type="button" 
+                                class="button pink" 
+                                ng-class="{'theme0_pink': theme == 0, 'theme1_pink': theme == 1}"
+                                value="^" 
+                                ng-click="pressKey('^')"> 
+                        <input type="button" 
+                                class="button pink" 
+                                ng-class="{'theme0_pink': theme == 0, 'theme1_pink': theme == 1}"
+                                value="(" 
+                                ng-click="pressKey('(')"> 
+                        <input type="button" 
+                                class="button pink" 
+                                ng-class="{'theme0_pink': theme == 0, 'theme1_pink': theme == 1}"
+                                value=")" 
+                                ng-click="pressKey(')')"> 
+                        <input type="button" 
+                                class="button pink" 
+                                ng-class="{'theme0_pink': theme == 0, 'theme1_pink': theme == 1}"
+                                value="%" 
+                                ng-click="pressKey('%')">     
+                </div>
+
+                <div class="row_calc">                
+                        <input type="button" 
+                                class="button black" 
+                                ng-class="{'theme0_black': theme == 0, 'theme1_black': theme == 1}"
+                                value="7" 
+                                ng-click="pressKey('7')">
+                        <input type="button" 
+                                class="button black" 
+                                ng-class="{'theme0_black': theme == 0, 'theme1_black': theme == 1}"
+                                value="8" 
+                                ng-click="pressKey('8')">
+                        <input type="button" 
+                                class="button black" 
+                                ng-class="{'theme0_black': theme == 0, 'theme1_black': theme == 1}"
+                                value="9" 
+                                ng-click="pressKey('9')">
+                        <input type="button" 
+                                class="button pink" 
+                                ng-class="{'theme0_pink': theme == 0, 'theme1_pink': theme == 1}"
+                                value="/" 
+                                ng-click="pressKey('/')">           
+                </div>
+
+                <div class="row_calc">
+                        <input type="button" 
+                                class="button black"
+                                ng-class="{'theme0_black': theme == 0, 'theme1_black': theme == 1}"
+                                value="4" 
+                                ng-click="pressKey('4')">
+                        <input type="button" 
+                                class="button black" 
+                                ng-class="{'theme0_black': theme == 0, 'theme1_black': theme == 1}"
+                                value="5" 
+                                ng-click="pressKey('5')">
+                        <input type="button" 
+                                class="button black" 
+                                ng-class="{'theme0_black': theme == 0, 'theme1_black': theme == 1}"
+                                value="6" 
+                                ng-click="pressKey('6')">
+                        <input type="button" 
+                                class="button pink"
+                                ng-class="{'theme0_pink': theme == 0, 'theme1_pink': theme == 1}"
+                                value="*" 
+                                ng-click="pressKey('*')">
+                </div>
+
+                <div class="row_calc">
+                        <input type="button" 
+                                class="button black" 
+                                ng-class="{'theme0_black': theme == 0, 'theme1_black': theme == 1}"
+                                value="1" 
+                                ng-click="pressKey('1')">
+                        <input type="button" 
+                                class="button black" 
+                                ng-class="{'theme0_black': theme == 0, 'theme1_black': theme == 1}"
+                                value="2" 
+                                ng-click="pressKey('2')">
+                        <input type="button" 
+                                class="button black" 
+                                ng-class="{'theme0_black': theme == 0, 'theme1_black': theme == 1}"
+                                value="3" 
+                                ng-click="pressKey('3')">
+                        <input type="button" 
+                                class="button pink"
+                                ng-class="{'theme0_pink': theme == 0, 'theme1_pink': theme == 1}" 
+                                value="+" 
+                                ng-click="pressKey('+')" >
+                </div>
+                        
+                <div class="row_calc">
+                        <input type="button" 
+                                class="button black"
+                                ng-class="{'theme0_black': theme == 0, 'theme1_black': theme == 1}"
+                                value="0" 
+                                ng-click="pressKey('0')">
+                        <input type="button" 
+                                class="button black"
+                                ng-class="{'theme0_black': theme == 0, 'theme1_black': theme == 1}"
+                                value="."
+                                ng-click="pressKey('.')">
+                        <input type="button" 
+                                class="button orange" 
+                                ng-class="{'theme0_orange': theme == 0, 'theme1_orange': theme == 1}"
+                                value="=" 
+                                ng-click="pressKeyEval()">
+                        <input type="button" 
+                                class="button pink" 
+                                ng-class="{'theme0_pink': theme == 0, 'theme1_pink': theme == 1}"
+                                value="-" 
+                                ng-click="pressKey('-')">
+                </div>
+
+        </div>
+                <input type="text" 
+                       value=""
+                       id = 'emptyKey' 
+                       ng-click="pressKey('')">
+        </div>
+
+</div>

@@ -1,0 +1,25 @@
+{
+  "name": "calculator-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hadriel Benjo",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "express-jwt": "^5.3.1",
+    "express-jwt-authz": "^1.0.0",
+    "express-promise-router": "^3.0.2",
+    "helmet": "^3.12.1",
+    "jwks-rsa": "^1.2.1",
+    "mathjs": "^5.0.0",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.17.5"
+  }
+}

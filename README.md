@@ -1,6 +1,6 @@
 # FullStack_Calculator
 
-### ElectronJS , angular , nodeJS, auth0, html, css
+### ElectronJS , angular , nodeJS, auth0, JavaScript, html, css
 
 ## Description
 

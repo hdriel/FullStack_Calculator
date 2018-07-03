@@ -15,5 +15,5 @@ How to run the project is described in the pdf file in the project folder.
 
 ![image1](https://profile.fcdn.co.il/images2/0__05b3bfdae2ea2e.jpg)
 
-Thanks, 
+
 Enjoy...
